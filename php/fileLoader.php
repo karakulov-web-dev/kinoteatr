@@ -8,7 +8,7 @@ class FileLoader {
     function load($pathDir) {
         foreach($this->idArr as $id) {
             $file = new File($id);
-            $file->load($pathDir);
+            $file->load();
         }
     }
 }
@@ -16,22 +16,8 @@ class FileLoader {
 class File {
     function __construct($id) {
         $this->id = $id;
-        $this->url = $this->getUrl($id);
     }
-    function getUrl($id) {
-      $result = reqGetHttp("http://212.77.128.203/apps/youtube/links.php?id=".$id);
-      $arrSize = count($result);
-      if ($arrSize) {
-        $url = $result[$arrSize - 1]->url;
-        return $url;
-      } else {
-        return 0;
-      }
-    }
-    function load($pathDir) {
-        if (!$this->url) {
-            return;
-        }
-        file_put_contents($pathDir.$this->id, file_get_contents($this->url));
+    function load() {
+        exec("youtube-dl -f 22  -o /var/www/trailers/public/video/$this->id https://www.youtube.com/watch?v=$this->id");
     }
 }
