@@ -1,9 +1,9 @@
 <?php
-require_once("./ytbVideoListByKinoteatr.php");
-require_once("./fileExistChecker.php");
-require_once("./fileLoader.php");
+require_once(__DIR__."/ytbVideoListByKinoteatr.php");
+require_once(__DIR__."/fileExistChecker.php");
+require_once(__DIR__."/fileLoader.php");
 
-$pathDir = "../public/video/";
+$pathDir = __DIR__."/../public/video/";
 
 $videoList = new VideoList(
     array(

@@ -1,5 +1,5 @@
 <?php
-require_once("./reqGetHttp.php");
+require_once(__DIR__."/reqGetHttp.php");
 
 class VideoList {
     function __construct($urlArr) {

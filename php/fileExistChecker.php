@@ -6,7 +6,7 @@ class FileExistChecker {
         $this->fileExistsIds = array();
         $this->fileNoExistsIds = array();
         
-        $this->pathDir = "../public/video/";
+        $this->pathDir = $pathDir;
         $this->files = scandir($this->pathDir);
 
         $this->rmLegacyFiles();
