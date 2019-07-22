@@ -8,7 +8,7 @@ class FileLoader {
     function load($pathDir) {
         foreach($this->idArr as $id) {
             $file = new File($id);
-            $file->load();
+            $file->load($pathDir);
         }
     }
 }
@@ -17,7 +17,7 @@ class File {
     function __construct($id) {
         $this->id = $id;
     }
-    function load() {
-        exec("youtube-dl -f 22  -o /var/www/trailers/public/video/$this->id https://www.youtube.com/watch?v=$this->id");
+    function load($pathDir) {
+        exec("youtube-dl -f 22  -o ".$pathDir."$this->id https://www.youtube.com/watch?v=$this->id");
     }
 }

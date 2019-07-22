@@ -13,6 +13,7 @@ $videoList = new VideoList(
     "http://kuzbass-stb.m-sk.ru/page121.php"
     )
 );
+
 $fileExistChecker = new FileExistChecker($videoList->getIdArr(), $pathDir);
 $fileLoader = new FileLoader($fileExistChecker->getNoExists());
 $fileLoader->load($pathDir);
