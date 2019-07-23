@@ -17,7 +17,7 @@ class VideoList {
     function _getVideoIdList() {
         foreach ($this->videoItems as $item) {
            if ($item->youtube && $item->youtube != "Нет данных") {
-            $this->videoIdList[] = $item->youtube;
+            $this->videoIdList[] = $item->youtube.".mp4";
            }
         }
     }
