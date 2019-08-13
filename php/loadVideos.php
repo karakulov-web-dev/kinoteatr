@@ -2,6 +2,7 @@
 require_once(__DIR__."/ytbVideoListByKinoteatr.php");
 require_once(__DIR__."/fileExistChecker.php");
 require_once(__DIR__."/fileLoader.php");
+require_once(__DIR__."/date.php");
 
 $pathDir = __DIR__."/../public/video/";
 
